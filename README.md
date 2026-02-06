@@ -9,7 +9,7 @@ This repo contains the **DDL/DML**, notebook logic (Bronze → Silver → Gold �
 ## What problem this solves
 
 Traditional onboarding for new partners often requires:
-- A separate stored procedure / Talend job / custom process per partner
+- A separate stored procedure /  job / custom process per partner
 - Manual changes when partner format varies (delimiters, missing segments, etc.)
 - Limited observability (hard to reconcile totals and prove completeness)
 - Slow onboarding cycles
@@ -156,7 +156,7 @@ Workspace folder:
 5) Drop a test file and run orchestrator
 
 ✅ No new stored procedure  
-✅ No new Talend job  
+✅ No new  job  
 ✅ Minimal code change only if a truly new parsing pattern is needed
 
 ---
