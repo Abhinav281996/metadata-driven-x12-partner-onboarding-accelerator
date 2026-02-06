@@ -1,6 +1,6 @@
 # Metadata-Driven X12 Partner Onboarding Accelerator (Databricks)
 
-A metadata-driven framework to onboard new healthcare partners faster by ingesting, parsing, normalizing, and auditing **X12 837 claims** in Databricks—without building a new stored procedure or a new Talend job per partner.
+A metadata-driven framework to onboard new healthcare partners faster by ingesting, parsing, normalizing, and auditing **X12 837 claims** in Databricks—without building a new stored procedure or a new  job per partner.
 
 This repo contains the **DDL/DML**, notebook logic (Bronze → Silver → Gold → Ops), and Step 7 metadata (vendor profiles, mappings, standardization, quarantine) to make the pipeline configuration-driven.
 
