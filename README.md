@@ -16,18 +16,6 @@ Traditional onboarding for new partners often requires:
 
 This accelerator reduces onboarding time by shifting “partner differences” into **metadata tables** rather than new code.
 
----
-
-## Key project facts (must match environment)
-
-- **Catalog:** `artha_serverless_usa`
-- **Landing base path:**  
-  `/Volumes/artha_serverless_usa/x12/x12_landing_vol/landing/x12/837/`
-- **Vendors (folders under landing base):** `vendorA`, `vendorB`, `vendorC`
-- **Notebooks live under:**  
-  `/Workspace/Users/abhinav.gaddam@thinkartha.com/HC_MetaData_Framework_PartnerOnBoarding/`
-
----
 
 ## Target architecture (Medallion)
 
@@ -94,8 +82,8 @@ Instead of hardcoding partner differences into pipelines, the behavior is contro
 
 - Databricks workspace with **Unity Catalog enabled**
 - Permissions to:
-  - create schemas and tables in `artha_serverless_usa`
-  - access/write to Volumes under `/Volumes/artha_serverless_usa/...`
+  - create schemas and tables in `catalog_serverless_usa`
+  - access/write to Volumes under `/Volumes/catalog_serverless_usa/...`
 - A cluster or serverless compute that can run notebooks and write Delta tables
 
 ---
@@ -113,7 +101,7 @@ This creates:
 
 ### 2) Ensure landing folders exist
 Landing base:
-`/Volumes/artha_serverless_usa/x12/x12_landing_vol/landing/x12/837/`
+`/Volumes/catalog_serverless_usa/x12/x12_landing_vol/landing/x12/837/`
 
 Expected vendor folders:
 - `vendorA/`
@@ -122,7 +110,7 @@ Expected vendor folders:
 
 ### 3) Import notebooks into Databricks
 Workspace folder:
-`/Workspace/Users/abhinav.gaddam@thinkartha.com/HC_MetaData_Framework_PartnerOnBoarding/`
+`/Workspace/Users/abhinav.gaddam@thinkcatalog.com/HC_MetaData_Framework_PartnerOnBoarding/`
 
 ---
 
@@ -140,7 +128,7 @@ Workspace folder:
 ### What you add/update (mostly metadata)
 
 1) Create vendor landing folder:
-/Volumes/artha_serverless_usa/x12/x12_landing_vol/landing/x12/837/<newVendor>/
+/Volumes/catalog_serverless_usa/x12/x12_landing_vol/landing/x12/837/<newVendor>/
 
 
 2) Insert vendor in:
@@ -216,4 +204,4 @@ Typical statuses:
 ### Check vendor registry
 ```sql
 SELECT vendor_id, landing_path, transaction_type, expected_version, active_flag
-FROM artha_serverless_usa.cfg_x12.vendor_registry;
+FROM catalog.cfg_x12.vendor_registry;
