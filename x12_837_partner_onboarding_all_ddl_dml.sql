@@ -14,7 +14,7 @@
 
 -- ---------------------------------------
 -- 0) Set catalog + create schemas
--- ---------------------------------------
+-- -----------------------------------------
 USE CATALOG artha_serverless_usa;
 
 CREATE SCHEMA IF NOT EXISTS cfg_x12;
